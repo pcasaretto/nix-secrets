@@ -4,6 +4,7 @@ keys:
     - &pcasaretto age1nf20cvk2lplmurtyxhd9k47rfhmk95kg9522yspnae0zz45d9e0s6jkrk6
 - &hosts: # nix-shell -p ssh-to-age --run 'cat /etc/ssh/ssh_host_ed25519_key.pub | ssh-to-age'
     - &nixos age10sw2ucjh9u336ak6l8ggar3rwrk9aj430dgvyuhgyduuqtsjzdcs27wwsc
+    - &overdose age1ygplv2hc3awj3f50vtldtc68n253rt03qzlx3h2fpc7trx55lymssavtvd
 
 creation_rules:
     #path should be relative to location of this file (.sops.yaml)
@@ -12,3 +13,4 @@ creation_rules:
     - age:
       - *pcasaretto
       - *nixos
+      - *overdose
