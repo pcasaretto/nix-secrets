@@ -1,16 +1,9 @@
-# pub keys
 keys:
-- &users:
-    - &pcasaretto age1nf20cvk2lplmurtyxhd9k47rfhmk95kg9522yspnae0zz45d9e0s6jkrk6
-- &hosts: # nix-shell -p ssh-to-age --run 'cat /etc/ssh/ssh_host_ed25519_key.pub | ssh-to-age'
-    - &nixos age10sw2ucjh9u336ak6l8ggar3rwrk9aj430dgvyuhgyduuqtsjzdcs27wwsc
-    - &overdose age1ygplv2hc3awj3f50vtldtc68n253rt03qzlx3h2fpc7trx55lymssavtvd
-
+  - &admin_pcasaretto age149yk6a2sljkqlyapkaruaeay8ymwm3lzn0xy22n6hcp3u8t2p5sqnmmpqy
+  - &server_littlelover age1tjx2luqn4eclevwj8mvnzpdsf0mqpwhpft4z5x3qs5yumrznfctssht38q
 creation_rules:
-    #path should be relative to location of this file (.sops.yaml)
-  - path_regex: hosts/common/secrets.yaml$
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
     - age:
-      - *pcasaretto
-      - *nixos
-      - *overdose
+      - *admin_pcasaretto
+      - *server_littlelover
