@@ -1,9 +1,11 @@
 keys:
   - &admin_pcasaretto age149yk6a2sljkqlyapkaruaeay8ymwm3lzn0xy22n6hcp3u8t2p5sqnmmpqy
   - &server_littlelover age1tjx2luqn4eclevwj8mvnzpdsf0mqpwhpft4z5x3qs5yumrznfctssht38q
+  - &server_cyberspace age1n0gvgwsmxvc5lphkgueh8mc7qjuzg30zahzzsjf9cmq83dhnh47s2ed8rz
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
     - age:
       - *admin_pcasaretto
       - *server_littlelover
+      - *server_cyberspace
